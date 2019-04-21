@@ -1,0 +1,298 @@
+﻿TO DO LIST
+----------
+
+[DONE] Event handler and no coroutines
+[DONE] Window positions
+[DONE] Fix long text
+[DONE] Summary tooltip
+[DONE] Visibility doesn't stick
+[DONE] Button class
+[DONE] Compact mode use same icons
+[DONE] Drag bar
+[DONE] Seperate settings window
+[DONE] Help window
+[DONE] Backup skin then restore
+[DONE] Window class
+[DONE] Merge settings panel into window
+[DONE] Setting events
+[DONE] Help content
+[DONE] Science totals tool tip doesn't include partially collected science
+[DONE] Filter text + state
+[DONE] Finish icons
+[DONE] Is there any way to avoid the KSC baby biomes in science.cfg? I use AvoidSrfLanded but the KSC biomes still show up.
+[DONE] Remaining science tool tip - adding onboard science not removing it
+
+[DONE] Passing parent so add eventhandler to parent
+[DONE] Reorganise parent into more sensible sections.
+[DONE] Give Event handler hooks.
+[DONE] Event handler just re-throws events to who ever is listening.
+[DONE] Pass Event handler both windows.
+[DONE] Windows hook the events they need.
+
+[DONE] Move AllScienceInstances out of ExperimentFilter
+[DONE] Also the 2 refresh functions
+[DONE] Move config events to config object.
+[DONE] Regularly tell things the current situation
+
+[DONE] Event handler to recalculate science status as required.
+[DONE] Add one filter to each window
+[DONE] Move biome detection out of window
+[DONE] Clear blue water between science and GUI
+[DONE] Click to run experiment
+[DONE] Overide config settings in filter.
+[DONE] Hide when done/instrument is full/cant be run
+[DONE] Status window is always in Lablander mode
+[DONE] Stop time
+[DONE] Play noise
+[DONE] Grey buttons should be labels
+[DONE] Cache available experiments list in status window.
+
+[DONE] Don't rely on Kerbin+Shores
+[DONE] Ltech
+[DONE] Message on screen when changing biome.
+[DONE] Science in vehicle
+[DONE] Green bar
+[DONE] Ui Scaling from GitHub
+[DONE] FILTER in config file
+[DONE] Difficult science filter
+[DONE] Check weird bugs in status window
+
+[DONE] Situation bug on KSC window.
+[DONE] Orbital Science
+[DONE] Test with new science plugin by DMagic
+[DONE] Only fire stock science if we can't use the new ones
+[DONE] Add arguments for settings to avoid dependency.
+[DONE] Not storing button settings correctly
+[NOT SEEN] Open Here&Now before checklist - throws exception
+[NOT SEEN] H&N pops even if all science is done - May be when complete but not recovered
+[DONEish] New Baby Biome - probably a bug - new collider on wrong layer.
+	(Added filter for KSC2.  Being added to "shores" when probably should be grasslands, in RSS -> anybody's guess.)
+[DONE] Save settings more often - after filter change
+[NOT SEEN - DONE IT ANYWAY]Save settings more often - when leaving any scene and going to any scene
+[DONE] Config settings for Here&Now window
+[DONE] Here&Now Settings
+[DONE] New buttons
+[DONE] Dont show results window.
+[DONE] Right click to open h&N or MusicMute!
+------------------------------------------------
+[DONE] Resources in tracking station
+[DONE] Body info window
+[DONE] Vehicles
+[DONE] Rewrite settings
+[DONE] Vehicle category from rename window
+[DONE] Window settings for new window
+[DONE] Popping when science is available but experiments not runnable.  Deal with CrewReport, EvaReport and SoilSample.
+
+
+--- NEXT ----------------------------------------
+Add new options to help
+Settings window is getting ugly
+
+In selected object window - Is controlable + Has lab + Total amount of science stored
+
+Move decisions as to what is completed into a function
+Setting for when things are considered completed
+If something has 0 science collected then it cant be completed
+--------------------------------------------------
+
+
+
+
+----------------------------------------------------
+Funding
+Biome list, has Lab, list of vessels
+Check map for water biomes.
+----------------------------------------------------
+
+
+Need red icons
+rename window
+img/sprite class - Load all in one place
+Visibility is weird.
+
+
+Pop icon when necessary.
+Put each icon into class
+Give icon to own window
+
+* Window class config
+* Window width
+* Store pre-calculated content where possible.
+
+
+
+/*
+ * TO DO
+ * 
+ * RECOVERY science
+ * SCANSAT
+ * RESOURCES
+ * Weird Orbital Science experiments
+ * 
+*/
+
+
+
+
+/* Detect RMB
+if (Input.GetMouseButtonUp(1))
+{
+onRightButtonStockClick();
+}
+else
+{
+onLeftButtonClick();
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Sprite.Create(texture, rect, pivot);
+
+ 
+
+The rectangle parameter is the source rectangle on the texture. If you want to use the whole texture as the sprite, use new Rect(0, 0, texture.width, texture.height);
+
+I believe the pivot is actually a percentage and not a pixel/unit value. So if you wanted to pivot at the center of the texture you would use new Vector2(0.5f, 0.5f)
+
+Sorry for the pseudo code, away from Unity at the moment.
+
+Hope this helps!
+
+
+
+
+
+=======================================
+
+
+    http://unity3d.com/support/documentation/ScriptReference/Texture2D.GetPixels.html
+
+
+        function GetPixels (x : int, y : int, blockWidth : int, blockHeight : int, miplevel : int) : Color[]
+        Description
+
+        Get a block of pixel colors.
+
+        This function is an extended version of GetPixels above; it does not return the whole mip level but only blockWidth by blockHeight region starting at x,y. The block must fit into the used mip level. The returned array is blockWidth*blockHeight size.
+
+    to write them back:
+
+    http://unity3d.com/support/documentation/ScriptReference/Texture2D.SetPixels.html
+
+        function SetPixels (x : int, y : int, blockWidth : int, blockHeight : int, colors : Color[], miplevel : int) : void
+        Description
+
+        Set a block of pixel colors.
+
+        This function is an extended version of SetPixels above; it does not modify the whole mip level but modifies only blockWidth by blockHeight region starting at x,y. The colors array must be blockWidth*blockHeight size, and the modified block must fit into the used mip level.
+
+     
+
+==================
+
+    Check the GetPixels and SetPixels funcitons in Texture2D. It sounds like you should have a good idea of what to do from there.
+     
+=========================
+
+
+    You can also use this if you want to copy the whole texture:
+
+        // duplicate the original texture
+        var texture : Texture2D = Instantiate(renderer.material.mainTexture);
+
+    You can also reference the whole texture:
+
+        // reference the original texture
+        var texture : Texture2D = renderer.material.mainTexture;
+
+
+------------------------------------------------
+
+
+
+
+
+
+// Resource map
+//ResourceMap.Instance.IsPlanetScanned(body.flightGlobalsIndex);
+
+
+/*
+
+# Reverse-engineered caps for recovery missions.  The values for SubOrbited
+# and Orbited are inverted on Kerbin, handled later.
+my %recoCap = (
+		   Flew => 6,
+		   FlewBy => 7.2,
+		   SubOrbited => 12,
+		   Orbited => 9.6,
+		   Surfaced => 18
+		  );
+recovery@KerbinFlew
+ * recovery@KerbinSubOrbited
+ * recovery@KerbinOrbited
+ * recovery@MunFlewBy
+ * recovery@MunOrbited
+ * recovery@MinmusOrbited
+ * recovery@MunSurfaced
+ * recovery@MinmusSurfaced
+ * recovery@MinmusFlewBy
+ * recovery@SunOrbited
+*/
+
+
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+--- Pass data to an event -------------------------------------------------
+Make a new EventArgs class such as:
+
+    public class ListEventArgs : EventArgs
+    {
+        public List<string> Data { get; set; }
+        public ListEventArgs(List<string> data)
+        {
+            Data = data;
+        }
+    }
+
+And make your event as this:
+
+    public event EventHandler<ListEventArgs> NewFileAdded;
+
+Add a firing method:
+
+protected void OnNewFileAdded(List<string> data)
+{
+    var localCopy = NewFileAdded;
+    if (localCopy != null)
+    {
+        localCopy(this, new ListEventArgs(data));
+    }
+}
+
+And when you want to handle this event:
+
+myObj.NewFileAdded += new EventHandler<ListEventArgs>(myObj_NewFileAdded);
+
+The handler method would appear like this:
+
+public void myObj_NewFileAdded(object sender, ListEventArgs e)
+{
+       // Do what you want with e.Data (It is a List of string)
+}

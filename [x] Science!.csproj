@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDFBE6F2-5DC6-4493-AB08-89F9A33A3219}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScienceChecklist</RootNamespace>
+    <AssemblyName>[x] Science!</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Plugin\_Ref_Modules\KSP_Current_DLL\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Plugin\_Ref_Modules\KSP_Current_DLL\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Plugin\_Ref_Modules\KSP_Current_DLL\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BiomeMapper.cs" />
+    <Compile Include="Body.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BodySituationFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Buttons\UnifiedButton.cs" />
+    <Compile Include="CelestialBodyFilters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DisplayMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DMagic.cs" />
+    <Compile Include="ExperimentFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GameHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HelpWindow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lib\Logging.cs" />
+    <Compile Include="Lib\Utilities.cs" />
+    <Compile Include="Lib\Window.cs" />
+    <Compile Include="Buttons\BlizzysToolbarButton.cs" />
+    <Compile Include="Buttons\IToolbarButton.cs" />
+    <Compile Include="NewSelectionData.cs" />
+    <Compile Include="NewSituationData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Noise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScienceChecklistAddon.cs" />
+    <Compile Include="Lib\StreamEx.cs" />
+    <Compile Include="Lib\TextureHelper.cs" />
+    <Compile Include="Buttons\AppLauncherButton.cs" />
+    <Compile Include="Lib\Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Buttons\ToolbarWrapper.cs" />
+    <Compile Include="ScienceContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScienceInstance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScienceWindow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SettingsWindow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShipState.cs" />
+    <Compile Include="Situation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StatusWindow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnlockedInstrumentList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WindowSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="xScienceEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="GameData\[x] Science!\CHANGES.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="icons\resize.png" />
+    <EmbeddedResource Include="icons\close.png" />
+    <EmbeddedResource Include="icons\help.png" />
+    <EmbeddedResource Include="icons\icon-status-small.png" />
+    <EmbeddedResource Include="icons\icon-status.png" />
+    <EmbeddedResource Include="icons\audio-alert-off.png" />
+    <EmbeddedResource Include="icons\audio-alert.png" />
+    <EmbeddedResource Include="icons\report-x.png" />
+    <EmbeddedResource Include="icons\report.png" />
+    <EmbeddedResource Include="icons\time-warp-x.png" />
+    <EmbeddedResource Include="icons\time-warp.png" />
+    <Content Include="ToDo.txt" />
+    <EmbeddedResource Include="icons\scienceCompleteCompact.png" />
+    <EmbeddedResource Include="icons\scienceProgressCompact.png" />
+    <EmbeddedResource Include="icons\scienceComplete.png" />
+    <EmbeddedResource Include="icons\scienceProgress.png" />
+    <EmbeddedResource Include="icons\icon.png" />
+    <EmbeddedResource Include="icons\all.png" />
+    <EmbeddedResource Include="icons\clearSearch.png" />
+    <EmbeddedResource Include="icons\currentSituation.png" />
+    <EmbeddedResource Include="icons\currentVessel.png" />
+    <EmbeddedResource Include="icons\search.png" />
+    <EmbeddedResource Include="icons\settings.png" />
+    <EmbeddedResource Include="icons\unlocked.png" />
+    <EmbeddedResource Include="icons\maximize.png" />
+    <EmbeddedResource Include="icons\minimize.png" />
+    <EmbeddedResource Include="icons\icon-small.png" />
+    <Content Include="GameData\[x] Science!\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GameData\[x] Science!\README.md" />
+    <None Include="GameData\[x] Science!\science.cfg" />
+    <None Include="GameData\[x] Science!\PluginData\[x] Science!\settings.cfg" />
+    <None Include="GameData\[x] Science!\[x] Science!.version" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).dll" "S:\Kerbal Space Program\KSP 1.4.5_Cur\GameData\[x] Science!\$(TargetName).dll"
+::copy /Y "$(TargetDir)\GTI_Config.cfg" "S:\Kerbal Space Program\KSP 1.4.2_Cur\GameData\GTI_Utilities\Plugins\GTI_Config.cfg"
+::copy /Y "$(TargetDir)$(TargetName).dll" "S:\Steam\SteamApps\common\Kerbal Space Program\GameData\GTI_Utilities\Plugins\$(TargetName).dll"
+
+
+::Profiling
+::"O:\Cheat_Crack_Patch\Kerbal Space Program\MOD help\Profiling\pdb2mdb\pdb2mdb\pdb2mdb.exe" "$(TargetFileName)"
+::copy /Y "$(TargetDir)$(TargetName).dll" "S:\Kerbal Space Program\KSP 1.4.3_Dev\GameData\[x] Science!\$(TargetName).dll"
+::copy /Y "$(TargetDir)$(TargetName).pdb" "S:\Kerbal Space Program\KSP 1.4.3_Dev\GameData\[x] Science!\$(TargetName).pdb"
+::copy /Y "$(TargetDir)$(TargetName).dll.mdb" "S:\Kerbal Space Program\KSP 1.4.3_Dev\GameData\[x] Science!\$(TargetName).dll.mdb"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
